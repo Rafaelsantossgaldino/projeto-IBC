@@ -47,7 +47,7 @@
 
   <div>
     <%= f.label :classificacao %><br />
-    <%= f.text_field :classificacao %><br />
+    <%= f.select :classificacao, Produto.classificacaos.keys.to_a %><br />
     <% @produtos.errors.full_messages_for(:classificacao).each do |message| %>
       <div> <%= message %> </div>
     <% end %>
