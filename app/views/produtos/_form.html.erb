@@ -6,6 +6,15 @@
         <% produto.errors.full_messages_for(:nome).each do |message| %>
           <li><%= message %></li>
         <% end %>
+        <% produto.errors.full_messages_for(:codigo).each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <% produto.errors.full_messages_for(:descricao).each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <% produto.errors.full_messages_for(:classificacao).each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -15,6 +24,9 @@
   <div>
     <%= f.label :codigo %><br />
     <%= f.text_field :codigo %><br />
+    <% @produtos.errors.full_messages_for(:codigo).each do |message| %>
+      <div> <%= message %> </div>
+    <% end %>
   </div>
 
   <div>
@@ -28,11 +40,17 @@
   <div>
     <%= f.label :descricao %><br />
     <%= f.text_field :descricao %><br />
+    <% @produtos.errors.full_messages_for(:descricao).each do |message| %>
+      <div> <%= message %> </div>
+    <% end %>
   </div>
 
   <div>
     <%= f.label :classificacao %><br />
     <%= f.text_field :classificacao %><br />
+    <% @produtos.errors.full_messages_for(:classificacao).each do |message| %>
+      <div> <%= message %> </div>
+    <% end %>
   </div>
 
   <div>
