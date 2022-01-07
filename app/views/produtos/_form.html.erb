@@ -1,9 +1,9 @@
 <%= form_for @produtos, html: { class: "basic-grey" } do |f| %>
   <% if @produtos.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+      <h2><%= pluralize(produto.errors.count, "error") %> Nao possibilitou salvamento do produto :</h2>
       <ul>
-        <% produto.errors.full_messages.each do |message| %>
+        <% produto.errors.full_messages_for(:nome).each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -20,6 +20,9 @@
   <div>
     <%= f.label :nome %><br />
     <%= f.text_field :nome %><br />
+    <% @produtos.errors.full_messages_for(:nome).each do |message|  %>
+      <div> <%= message %> </div>
+    <% end %>
   </div>
 
   <div>
