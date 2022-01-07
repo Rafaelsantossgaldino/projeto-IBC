@@ -1,0 +1,39 @@
+<%= form_for @produtos, html: { class: "basic-grey" } do |f| %>
+  <% if @produtos.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+      <ul>
+        <% produto.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3> Novo Produto </h3>
+
+  <div>
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %><br />
+  </div>
+
+  <div>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %><br />
+  </div>
+
+  <div>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %><br />
+  </div>
+
+  <div>
+    <%= f.label :classificacao %><br />
+    <%= f.text_field :classificacao %><br />
+  </div>
+
+  <div>
+      <%= f.submit "Criar", class: "button"%>
+      <%= link_to 'Back', produtos_url, class: "button-green" %>
+  </div>
+<% end %>
