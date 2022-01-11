@@ -1,9 +1,8 @@
-<%= form_for [ @produtos, @produtos.comments.build ], html: { class: "basic-grey" } do |f| %>
+<h2>Commentários</h2>
+<%= render 'comments/comment' %>
+<%= form_for [ @produtos, @produtos.comments.build ] do |f| %>
 
-  <h2>Comments</h2>
-  <%= render 'comments/comment' %>
-
-  <h2>Add a comment</h2>
+  <h2>Adicionar comentário</h2>
   <div>
     <%= f.label :commenter %> <br />
     <%= f.text_field :commenter %>
@@ -15,6 +14,9 @@
   </div>
 
   <div>
-    <%= f.submit "Criar Comentarios", class: "button" %>
+    <%= f.label :status %><br/>
+    <%= f.select :status, ['public', 'private', 'archived'], selected: 'public' %><br/>
   </div>
+  
+  <%= f.submit "Criar Comentarios", class: "button" %>
 <% end %>

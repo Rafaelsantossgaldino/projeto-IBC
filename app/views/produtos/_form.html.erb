@@ -1,4 +1,5 @@
 <%= form_for @produtos, html: { class: "basic-grey" } do |f| %>
+  <%= params[:action].eql?("edit") ? "Editar " : "Novo Produto" %>
   <% if @produtos.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(produto.errors.count, "error") %> Nao possibilitou salvamento do produto :</h2>
@@ -18,8 +19,6 @@
       </ul>
     </div>
   <% end %>
-
-  <h3> Novo Produto </h3>
 
   <div>
     <%= f.label :codigo %><br />
@@ -51,6 +50,11 @@
     <% @produtos.errors.full_messages_for(:classificacao).each do |message| %>
       <div> <%= message %> </div>
     <% end %>
+  </div>
+
+  <div>
+    <%= f.label :status %><br/>
+    <%= f.select :status, ['public', 'private', 'archived'], selected: 'public' %><br/>
   </div>
 
   <div>
