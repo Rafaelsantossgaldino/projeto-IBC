@@ -1,4 +1,7 @@
 class Produto < ApplicationRecord
+    has_many :comments, dependent: :destroy
+
+    # Validacoes
     validates :codigo, presence: true, length: { minimum: 3}
     validates :nome, presence: true, length: { minimum: 20}
     validates :classificacao, presence: true , length: { minimum: 2}

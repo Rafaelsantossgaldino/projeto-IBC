@@ -1,17 +1,10 @@
-<h3>Lista</h3>
 
-<p> Tabela do crud </p>
-<table border="2">
-    <tr>
-        <th>Código</th>
-        <th>Nome</th>
-        <th>Classificação</th>
-        <th>Descricao</th>
-  </tr>
-  <tr>
-    <td> <%= @produtos.codigo %></td>
-    <td> <%= @produtos.nome %></td>
-    <td> <%= @produtos.classificacao %></td>
-    <td> <%= @produtos.descricao %> </td>
-  </tr>
-</table>
+<%= render 'comments/form' %>
+
+<ul>
+  <li><%= link_to "Edit", edit_produto_path(@produtos), class: "button" %></li> <br/>
+  <li><%= link_to "Destroy", produto_path(@produtos), class: "button-green",
+                    method: :delete, 
+                    data: {confirm: "Tem Certeza?"} %></li>
+</ul>
+<%= link_to "Voltar", root_path %>

@@ -1,0 +1,20 @@
+<%= form_for [ @produtos, @produtos.comments.build ], html: { class: "basic-grey" } do |f| %>
+
+  <h2>Comments</h2>
+  <%= render 'comments/comment' %>
+
+  <h2>Add a comment</h2>
+  <div>
+    <%= f.label :commenter %> <br />
+    <%= f.text_field :commenter %>
+  </div>
+
+  <div>
+    <%= f.label :classificacao %>
+    <%= f.select :classificacao, Comment.classificacaos.keys.to_a %>
+  </div>
+
+  <div>
+    <%= f.submit "Criar Comentarios", class: "button" %>
+  </div>
+<% end %>

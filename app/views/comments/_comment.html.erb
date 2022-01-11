@@ -1,0 +1,15 @@
+
+<div>
+  <% @produtos.comments.each do |comment| %>
+    <div>
+      <strong>Commenter:</strong>
+     <%= comment.commenter %>
+    </div>
+
+    <div>
+      <strong>Comment:</strong>
+      <%= comment.classificacao %>
+    </div>
+  <% end %>
+</div>
+
