@@ -1,39 +1,55 @@
-<div class="basic-grey">
-  <div>
-    <strong>Codigo:</strong>
-    <%= @produtos.codigo %>
-  </div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5 col-md-6 col-12 pb-4">
+        <h2>Produto</h2>
+          <div>
+          <strong>Codigo:</strong>
+          <%= @produtos.codigo %>
+        </div>
 
-  <div>
-    <strong>Nome:</strong>
-    <%= @produtos.nome %>
-  </div>
+        <div>
+          <strong>Nome:</strong>
+          <%= @produtos.nome %>
+        </div>
 
-  <div>
-    <strong>Classificação:</strong>
-    <%= @produtos.classificacao %>
-  </div>
+        <div>
+          <strong>Classificação:</strong>
+          <%= @produtos.classificacao %>
+        </div>
 
-  <div>
-    <strong>Descrição:</strong>
-    <%= @produtos.descricao %> 
-  </div>
+        <div>
+          <strong>Descrição:</strong>
+          <%= @produtos.descricao %> 
+        </div>
 
-  <%= render 'comments/form' %>
-  <br/>
-  <br/>
-  <div>
-    <%= link_to "Edit", edit_produto_path(@produtos), class: "button" %>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <%= link_to "Destroy", produto_path(@produtos), class: "button-green",
-                      method: :delete, 
-                      data: {confirm: "Tem Certeza?"} %>
+        <%= render 'comments/comment' %>
+      </div>
+      <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+        <form id="algin-form">
+          <div class="form-group">
+            <h4>Deixe um comentario</h4>
+            <%= render 'comments/form' %>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+</section>
+
+<br/>
+<br/>
+<div>
+  <%= link_to "Edit", edit_produto_path(@produtos), class: "button" %>
   <br/>
   <br/>
   <br/>
-  <%= link_to "Voltar", root_path, class: "button"%>
+  <br/>
+  <%= link_to "Destroy", produto_path(@produtos), class: "button-green",
+                    method: :delete, 
+                    data: {confirm: "Tem Certeza?"} %>
 </div>
+<br/>
+<br/>
+<br/>
+<%= link_to "Voltar", root_path, class: "button"%>

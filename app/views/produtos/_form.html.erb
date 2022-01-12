@@ -1,64 +1,75 @@
-<%= form_for @produtos, html: { class: "basic-grey" } do |f| %>
-  <%= params[:action].eql?("edit") ? "Editar " : "Novo Produto" %>
-  <% if @produtos.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(produto.errors.count, "error") %> Nao possibilitou salvamento do produto :</h2>
-      <ul>
-        <% produto.errors.full_messages_for(:nome).each do |message| %>
-          <li><%= message %></li>
+<div class="box-shadow-z1 padding-lg border-radius row margin-sm">
+  <%= form_for @produto, remote: true, html: { class: 'form-horizontal' } do |f| %>
+    <%= params[:action].eql?("edit") ? "Editar " : "Novo Produto" %>
+    <% if @produto.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@produto.errors.count, "error") %> Nao possibilitou salvamento do produto :</h2>
+        <ul>
+          <% @produto.errors.full_messages_for(:nome).each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          <% @produto.errors.full_messages_for(:codigo).each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          <% @produto.errors.full_messages_for(:descricao).each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          <% @produto.errors.full_messages_for(:classificacao).each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="">
+      <div class="col-lg-3">
+        <%= f.label :codigo %><br />
+        <%= f.text_field :codigo, class: "form-control" %>
+        <% @produto.errors.full_messages_for(:codigo).each do |message| %>
+          <div> <%= message %> </div>
         <% end %>
-        <% produto.errors.full_messages_for(:codigo).each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        <% produto.errors.full_messages_for(:descricao).each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        <% produto.errors.full_messages_for(:classificacao).each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+      </div>
     </div>
+
+    <div class="">
+      <div class="col-lg-6">
+        <%= f.label :nome %><br />
+        <%= f.text_field :nome, class: "form-control"  %><br />
+        <% @produto.errors.full_messages_for(:nome).each do |message|  %>
+          <div> <%= message %> </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="col-lg-6">
+        <%= f.label :descricao %><br />
+        <%= f.text_area :descricao, class: "form-control"  %><br />
+        <% @produto.errors.full_messages_for(:descricao).each do |message| %>
+          <div> <%= message %> </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.label :classificacao %><br />
+        <%= f.select :classificacao, Produto.classificacaos.keys.to_a, {}, class: "form-control" %>
+        <% @produto.errors.full_messages_for(:classificacao).each do |message| %>
+          <div> <%= message %> </div>
+        <% end %>
+      </div>
+      
+      <div class="form-group col-md-3">
+        <%= f.label :status %>
+        <%= f.select :status, Produto.statuses.keys.to_a, {}, class: "form-control" %>
+      </div> 
+    </div>  
+    <br/>
+    <div>
+      <%= f.submit "Criar", class: "btn btn-dark"%>
+      <%= link_to 'Back', produtos_url, class: "btn btn-outline-danger" %>
+    </div>
+    
   <% end %>
-
-  <div>
-    <%= f.label :codigo %><br />
-    <%= f.text_field :codigo %><br />
-    <% @produtos.errors.full_messages_for(:codigo).each do |message| %>
-      <div> <%= message %> </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %><br />
-    <% @produtos.errors.full_messages_for(:nome).each do |message|  %>
-      <div> <%= message %> </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %><br />
-    <% @produtos.errors.full_messages_for(:descricao).each do |message| %>
-      <div> <%= message %> </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= f.label :classificacao %><br />
-    <%= f.select :classificacao, Produto.classificacaos.keys.to_a %><br />
-    <% @produtos.errors.full_messages_for(:classificacao).each do |message| %>
-      <div> <%= message %> </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= f.label :status %><br/>
-    <%= f.select :status, ['public', 'private', 'archived'], selected: 'public' %><br/>
-  </div>
-
-  <div>
-      <%= f.submit "Criar", class: "button"%>
-      <%= link_to 'Back', produtos_url, class: "button-green" %>
-  </div>
-<% end %>
+</div>  

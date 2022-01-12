@@ -7,11 +7,9 @@ class Produto < ApplicationRecord
   validates :nome, presence: true, length: { minimum: 10}
   validates :classificacao, presence: true , length: { minimum: 2}
   validates :descricao, presence: true, length: { minimum: 10}
-
   
   enum classificacao: { 'Produto' => 0, 'Servico' => 1 }
 
-  VALID_STATUSES = ['public', 'private', 'archived']
-
-  validates :status, inclusion: { in: VALID_STATUSES }
+  
+  enum status: { 'Public' => 0, 'Private' => 1, 'Archived' => 2 }
 end

@@ -9,30 +9,40 @@ class ProdutosController < ApplicationController
   end
   
   def new
-    @produtos = Produto.new
+    @produto = Produto.new
+    respond_to do |format|
+      format.js
+    end
   end
   
   def create
-    @produtos = Produto.new(produto_params)
+    @produto = Produto.new(produto_params)
 
-    if @produtos.save
-      redirect_to @produtos
+    respond_to do |format|
+      if @produto.save
+        format.js { redirect_to produtos_url }
       else
-        render :new
+        format.js { render :new }
+      end
     end
   end
 
   def edit
-    @produtos =  Produto.find(params[:id])    
+    @produto =  Produto.find(params[:id]) 
+    respond_to do |format|
+      format.js
+    end   
   end
 
   def update
     @produto = Produto.find(params[:id])
 
-    if @produtos.update(produto_params)
-      redirect_to @produtos
-    else
-      render :edit
+    respond_to do |format|
+      if @produto.update_attributes(produto_params)
+        format.js { redirect_to produtos_url }
+      else
+        format.js { render :edit }
+      end
     end
   end
 

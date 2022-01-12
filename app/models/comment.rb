@@ -4,7 +4,6 @@ class Comment < ApplicationRecord
   belongs_to :produto
   enum classificacao: { 'Like' => 0, 'Deslike' => 1 }
 
-  VALID_STATUSES = ['public', 'private', 'archived']
+  enum status:  { 'Public' => 0, 'Private' => 2, 'Archived' => 3 }
 
-  validates :status, inclusion: { in: VALID_STATUSES }  
 end
