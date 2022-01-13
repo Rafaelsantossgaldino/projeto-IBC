@@ -1,4 +1,6 @@
-<h2>Welcome to Crud's List</h2>
+<div class="text-white">
+  <h2>Welcome to Crud's List</h2>
+</div>
 
 <div class="album py-5 bg-light">
   <div class="container">
@@ -39,10 +41,9 @@
         <% end %>
       <% end %>
     </div>  
-  </div>    
+  </div>
+  <br/>    
+  <%= link_to 'Novo Produto', new_produto_path, remote:true, class: 'btn btn-outline-secondary' %>
 </div>
-
-<%= link_to 'Novo Produto', new_produto_path, remote:true, class: 'btn btn-outline-primary' %>
-  
 
 <%= render 'produtos/modal' %>

@@ -15,154 +15,165 @@
  */ @import "bootstrap";
 
 
-  .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
-  .navbar-nav {
-    width: 100%
+}
+.navbar-nav {
+  width: 100%
 }
 
 @media(min-width:568px) {
-    .end {
-        margin-left: auto
-    }
+  .end {
+    margin-left: auto
+  }
 }
 
 @media(max-width:768px) {
-    #post {
-        width: 100%
-    }
+  #post {
+    width: 100%
+  }
 }
 
 #clicked {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    text-align: center;
-    width: 100%;
-    background-color: #ecb21f;
-    border-color: #a88734 #9c7e31 #846a29;
-    color: black;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 13px
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: center;
+  width: 100%;
+  background-color: #ecb21f;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 13px
 }
 
 #profile {
-    background-color: unset
+  background-color: unset
 }
 
 #post {
-    margin: 10px;
-    padding: 6px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    text-align: center;
-    background-color: #ecb21f;
-    border-color: #a88734 #9c7e31 #846a29;
-    color: black;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 13px;
-    width: 50%
+  margin: 10px;
+  padding: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  background-color: #ecb21f;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 13px;
+  width: 50%
 }
 
 body {
-    background-color: #ffff
+  background-image: url("https://images.unsplash.com/photo-1614294148960-9aa740632a87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  
+}
+.container{
+  background-color: transparent !important;
+}
+
+.bg-light{
+  background-color: transparent !important;
 }
 
 #nav-items li a,
 #profile {
-    text-decoration: none;
-    color: rgb(224, 219, 219);
-    background-color: black
+  text-decoration: none;
+  color: rgb(224, 219, 219);
+  background-color: black
 }
 
 .comments {
-    margin-top: 5%;
-    margin-left: 20px
+  margin-top: 5%;
+  margin-left: 20px
 }
 
 .darker {
-    border: 1px solid #ecb21f;
-    background-color: black;
-    float: right;
-    border-radius: 5px;
-    padding-left: 40px;
-    padding-right: 30px;
-    padding-top: 10px
+  border: 1px solid #ecb21f;
+  background-color: black;
+  float: right;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px
 }
 
 .comment {
-    border: 1px solid rgba(16, 46, 46, 1);
-    background-color: rgba(221, 226, 226, 0.973);
-    float: left;
-    border-radius: 5px;
-    padding-left: 40px;
-    padding-right: 30px;
-    padding-top: 10px
+  border: 1px solid rgba(16, 46, 46, 1);
+  background-color: rgba(221, 226, 226, 0.973);
+  float: left;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px
 }
 
 .comment h4,
 .comment span,
 .darker h4,
 .darker span {
-    display: inline
+  display: inline
 }
 
 .comment p,
 .comment span,
 .darker p,
 .darker span {
-    color: rgb(184, 183, 183)
+  color: rgb(184, 183, 183)
 }
 
 h1,
 h4 {
-    color:black;
-    font-weight: bold
+  color:black;
+  font-weight: bold
 }
 
 label {
-    color:black
+  color:black
 }
 
 #align-form {
-    margin-top: 20px
+  margin-top: 20px
 }
 
 .form-group p a {
-    color: white
+  color: white
 }
 
 #checkbx {
-    background-color: black
+  background-color: black
 }
 
 #darker img {
-    margin-right: 15px;
-    position: static
+  margin-right: 15px;
+  position: static
 }
 
 .form-group input,
 .form-group textarea {
-    background-color: #ffff;
-    border: 1px solid black;
-    border-radius: 12px
+  background-color: #ffff;
+  border: 1px solid black;
+  border-radius: 12px
 }
 
 form {
-    border: 1px solid rgba(16, 46, 46, 1);
-    background-color: #ffff;
-    border-radius: 5px;
-    padding: 20px
+  border: 1px solid rgba(16, 46, 46, 1);
+  background-color: #ffff;
+  border-radius: 5px;
+  padding: 20px
 }
