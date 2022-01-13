@@ -22,9 +22,14 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <%= link_to "View", produto_path(produto), 
-                                class: "btn btn-dark" %>
+                                class: "btn btn-outline-success" %>
                     <%= link_to "Edit", edit_produto_path(produto), 
-                                class: "btn btn-outline-secondary", remote: true %>
+                                class: "btn btn-outline-success", remote: true %>
+
+                    <%= link_to "Destroy", produto_path(produto), 
+                                class: "btn btn-outline-success",
+                                method: :delete, 
+                                data: {confirm: "Tem Certeza?"} %>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>

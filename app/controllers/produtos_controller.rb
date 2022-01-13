@@ -5,7 +5,7 @@ class ProdutosController < ApplicationController
   end
 
   def show
-    @produtos = Produto.find(params[:id])
+    @produto = Produto.find(params[:id])
   end
   
   def new
@@ -47,8 +47,8 @@ class ProdutosController < ApplicationController
   end
 
   def destroy
-    @produtos = Produto.find(params[:id])
-    @produtos.destroy
+    @produto = Produto.find(params[:id])
+    @produto.destroy
 
     redirect_to root_path
   end

@@ -1,17 +1,16 @@
 class CommentsController < ApplicationController
   def create
-    @produtos = Produto.find(params[:produto_id])
-    @comment = @produtos.comments.create(comment_params)
-    redirect_to produto_path(@produtos) 
+    @produto = Produto.find(params[:produto_id])
+    @comment = @produto.comments.create(comment_params)
+    redirect_to produto_path(@produto) 
   end
 
   def destroy
-    @produtos = Produto.find(params[:produto_id])
-    @comment = @produtos.comments.find(params[:id])
+    @produto = Produto.find(params[:produto_id])
+    @comment = @produto.comments.find(params[:id])
     @comment.destroy
-    redirect_to produto_path(@produtos)
+    redirect_to produto_path(@produto)
   end
-  
 
   private
 
