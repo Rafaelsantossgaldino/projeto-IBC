@@ -1,13 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   nome: MyString
   codigo: MyString
-  classificacao: 
+  classificacao: 1
   descricao: MyText
 
 two:
   nome: MyString
   codigo: MyString
-  classificacao: 
+  classificacao: 1
   descricao: MyText

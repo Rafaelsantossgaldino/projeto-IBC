@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220107130338) do
+ActiveRecord::Schema.define(version: 2022_01_11_152917) do
 
-  create_table "produtos", force: true do |t|
-    t.string   "nome"
-    t.string   "codigo"
-    t.integer  "classificacao", default: 0
-    t.text     "descricao"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "comments", force: :cascade do |t|
+    t.text "commenter"
+    t.integer "classificacao"
+    t.integer "produto_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.index ["produto_id"], name: "index_comments_on_produto_id"
+  end
+
+  create_table "produtos", force: :cascade do |t|
+    t.string "nome"
+    t.string "codigo"
+    t.integer "classificacao", default: 0
+    t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
   end
 
 end

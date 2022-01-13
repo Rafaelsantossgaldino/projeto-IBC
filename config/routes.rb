@@ -1,6 +1,8 @@
-Crud::Application.routes.draw do
-  root "crud#index"
-
-
-  get "/crud" , to: "crud#index"
+Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "produtos#index"
+  
+  resources :produtos do
+    resources :comments
+  end
 end

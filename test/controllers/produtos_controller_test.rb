@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class CrudControllerTest < ActionController::TestCase
+class ProdutosControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get :index
+    get produtos_index_url
     assert_response :success
   end
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commenter: MyText
+  classificacao: 1
+  produto: one
+
+two:
+  commenter: MyText
+  classificacao: 1
+  produto: two
