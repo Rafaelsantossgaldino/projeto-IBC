@@ -1,13 +1,12 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-sm-5 col-md-6 col-12 pb-4">
+      <div class="col-sm-5 col-md-6 col-12 pb-4 text-white">
         <h1>Produto</h1>
         <div>
           <strong>Codigo:</strong>
           <%= @produto.codigo %>
         </div>
-
         <div>
           <strong>Nome:</strong>
           <%= @produto.nome %>
@@ -25,15 +24,16 @@
         <%= render 'comments/comment', produto: @produto %>  
       </div>
       <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
-        <form id="algin-form">
-          <div class="form-group">
-            <h4>Deixe um comentario</h4>
-            <%= render 'comments/form' %>
-          </div>
-        </form>
+        <div class="form-group">
+          <h4>Deixe um comentario</h4>
+          <%= render 'comments/form' %>
+        </div>
       </div>
     </div>
-    <%= link_to "Voltar", root_path, class: "btn btn-outline-primary"%>
+
+    <div class="text-white pt-2">
+      <%= link_to "Voltar", root_path, class: "btn btn-primary"%>
+    </div>
   </div>
 </section>
 

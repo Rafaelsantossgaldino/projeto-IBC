@@ -1,4 +1,4 @@
-<div class="text-white">
+<div class="text-white pt-2">
   <h2>Welcome to Crud's List</h2>
 </div>
 
@@ -24,12 +24,12 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <%= link_to "View", produto_path(produto), 
-                                class: "btn btn-outline-success" %>
+                                class: "btn btn-outline-secondary" %>
                     <%= link_to "Edit", edit_produto_path(produto), 
-                                class: "btn btn-outline-success", remote: true %>
+                                class: "btn btn-outline-secondary", remote: true %>
 
                     <%= link_to "Destroy", produto_path(produto), 
-                                class: "btn btn-outline-success",
+                                class: "btn btn-outline-secondary",
                                 method: :delete, 
                                 data: {confirm: "Tem Certeza?"} %>
                   </div>
@@ -43,7 +43,7 @@
     </div>  
   </div>
   <br/>    
-  <%= link_to 'Novo Produto', new_produto_path, remote:true, class: 'btn btn-outline-secondary' %>
+  <%= link_to 'Novo Produto', new_produto_path, remote:true, class: 'btn btn-primary' %>
 </div>
 
 <%= render 'produtos/modal' %>

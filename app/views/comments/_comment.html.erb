@@ -1,4 +1,4 @@
-<div>
+<div class="text-white pt-2">
   <% produto.comments.each do |comment| %>
     <% if comment.valid? %>
       <div>
@@ -11,7 +11,7 @@
         <%= comment.classificacao %>
       </div>
       <br/>
-      <%= link_to 'Destruir comentário', [comment.produto, comment], class: "button",
+      <%= link_to 'Destruir comentário', [comment.produto, comment], class: "btn btn-secondary",
                     method: :delete,
                     data: { confirm: "Tem Certeza?" } %>
   
