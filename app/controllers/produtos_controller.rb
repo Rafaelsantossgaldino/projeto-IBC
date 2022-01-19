@@ -6,21 +6,22 @@ class ProdutosController < ApplicationController
   end
 
   def response_json
-    @produtos = Produto.new 
+    @produto = Produto.new(produto_params) 
 
     respond_to do |format|
       #render json: JSON.pretty_generate(@produtos.as_json)
-
-      format.json { render json: @produtos }
+      if @produto.save
+        format.json { render json: @produto }
+      else
+        format.json { render :json => @produto.errors }
+      end
     end
   end
 
   def show
     @produto = Produto.find(params[:id])
 
-    respond_to do |format|
-      format.json { render json: @produto }
-    end
+ 
   end
   
   def new
