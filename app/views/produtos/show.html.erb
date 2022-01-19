@@ -7,20 +7,27 @@
           <strong>Codigo:</strong>
           <%= @produto.codigo %>
         </div>
+        <br/>
         <div>
           <strong>Nome:</strong>
           <%= @produto.nome %>
         </div>
-
+        <br/>
         <div>
           <strong>Classificação:</strong>
           <%= @produto.classificacao %>
         </div>
-
+        <br/>	
         <div>
           <strong>Descrição:</strong>
           <%= @produto.descricao %> 
         </div>
+        <br/>	
+        <div>
+          <strong>Categoria:</strong>
+          <%= @produto.categoria %> 
+        </div>
+        <br/>
         <%= render 'comments/comment', produto: @produto %>  
       </div>
       <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
