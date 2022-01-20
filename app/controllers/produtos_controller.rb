@@ -21,7 +21,10 @@ class ProdutosController < ApplicationController
   def show
     @produto = Produto.find(params[:id])
 
- 
+    respond_to do |format|
+      format.html
+      format.json { render json: @produto }
+    end
   end
   
   def new
@@ -41,7 +44,7 @@ class ProdutosController < ApplicationController
       else
         format.js { render :new }
       end
-
+      format.html
       format.json { render json: @produto }
     end
   end
@@ -63,7 +66,7 @@ class ProdutosController < ApplicationController
       else
         format.js { render :edit }
       end
-
+      format.html
       format.json { head :ok }
     end
   end
@@ -74,6 +77,7 @@ class ProdutosController < ApplicationController
     redirect_to root_path
 
     respond_to do |format|
+      format.html
       format.json { head :ok }
     end
 
