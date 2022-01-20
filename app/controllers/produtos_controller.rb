@@ -2,7 +2,8 @@ class ProdutosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @produtos = Produto.all
+    @q = Produto.ransack(params[:q])
+    @produtos = @q.result(distinct: true).includes(:comments)
   end
 
   def response_json

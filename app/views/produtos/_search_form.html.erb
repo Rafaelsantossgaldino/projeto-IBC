@@ -1,0 +1,12 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :nome %>
+  <%= f.search_field :nome_cont %>
+
+  <%= f.label :categoria %>
+  <%= f.select :categoria_eq, Produto.categoria, {include_blank: true} %>
+
+  <%= f.label :classificacao %>
+  <%= f.select :comments_classificacao_eq, Comment.classificacaos, {include_blank: true} %>
+
+  <%= f.submit %>
+<% end %>
