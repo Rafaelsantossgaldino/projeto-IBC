@@ -1,12 +1,23 @@
-<%= search_form_for @q do |f| %>
-  <%= f.label :nome %>
-  <%= f.search_field :nome_cont %>
+<br/>
+<%= search_form_for @q, html: {class: "produto_search" } do |f|  %>
+  <div class="row">
+    <div class="col-lg-3">
+      <%= f.label :nome, class: 'text-white' %>
+      <%= f.search_field :nome_cont, class: 'form-control'%>
+    </div>
 
-  <%= f.label :categoria %>
-  <%= f.select :categoria_eq, Produto.categoria, {include_blank: true} %>
+    <div class="col-lg-3">
+      <%= f.label :categoria, class: 'text-white' %>
+      <%= f.select :categoria_eq, Produto.categoria, {include_blank: true}, class: "form-control"%>
+    </div>
 
-  <%= f.label :classificacao %>
-  <%= f.select :comments_classificacao_eq, Comment.classificacaos, {include_blank: true} %>
-
-  <%= f.submit %>
+    <div class="col-lg-3">
+      <%= f.label :classificacao, class: 'text-white' %>
+      <%= f.select :comments_classificacao_eq, Comment.classificacaos, {include_blank: true}, class: "form-control"%>
+    </div>
+  </div>
+  <br/>
+  <div class="col-lg-3">
+    <%= f.submit "Buscar", class: "btn btn-outline-primary text-white" %>
+  </div>
 <% end %>
