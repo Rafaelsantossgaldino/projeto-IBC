@@ -7,6 +7,11 @@
     </div>
 
     <div class="col-lg-3">
+      <%= f.label :valor, class: 'text-white' %>
+      <%= f.search_field :valor_cont, class: 'form-control'%>
+    </div>
+
+    <div class="col-lg-3">
       <%= f.label :categoria, class: 'text-white' %>
       <%= f.select :categoria_eq, Produto.categoria, {include_blank: true}, class: "form-control"%>
     </div>
@@ -18,6 +23,6 @@
   </div>
   <br/>
   <div class="col-lg-3">
-    <%= f.submit "Buscar", class: "btn btn-outline-primary text-white" %>
+    <%= f.submit "Busca Avançada", class: "btn btn-outline-primary text-white" %>
   </div>
 <% end %>
