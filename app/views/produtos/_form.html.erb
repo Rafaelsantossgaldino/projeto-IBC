@@ -24,14 +24,12 @@
       </div>
     <% end %>
     
-    <div class="">
-      <div class="col-lg-3">
-        <%= f.label :codigo %><br />
-        <%= f.text_field :codigo, class: "form-control" %>
-        <% @produto.errors.full_messages_for(:codigo).each do |message| %>
-          <div> <%= message %> </div>
-        <% end %>
-      </div>
+    <div class="col-lg-3">
+      <%= f.label :codigo %><br />
+      <%= f.text_field :codigo, class: "form-control" %>
+      <% @produto.errors.full_messages_for(:codigo).each do |message| %>
+        <div> <%= message %> </div>
+      <% end %>
     </div>
 
     <div class="col-lg-3" >
@@ -39,26 +37,22 @@
       <%= f.text_field :valor, class: "form-control" %><br />
     </div>
 
-    <div class="">
-      <div class="col-lg-6">
-        <%= f.label :nome %><br />
-        <%= f.text_field :nome, class: "form-control"  %><br />
-        <% @produto.errors.full_messages_for(:nome).each do |message|  %>
-          <div> <%= message %> </div>
-        <% end %>
-      </div>
+    <div class="col-lg-6">
+      <%= f.label :nome %><br />
+      <%= f.text_field :nome, class: "form-control"  %><br />
+      <% @produto.errors.full_messages_for(:nome).each do |message|  %>
+        <div> <%= message %> </div>
+      <% end %>
     </div>
-
-    <div class="">
-      <div class="col-lg-6">
-        <%= f.label :descricao %><br />
-        <%= f.text_area :descricao, class: "form-control"  %><br />
-        <% @produto.errors.full_messages_for(:descricao).each do |message| %>
-          <div> <%= message %> </div>
-        <% end %>
-      </div>
+   
+    <div class="col-lg-6">
+      <%= f.label :descricao %><br />
+      <%= f.text_area :descricao, class: "form-control"  %><br />
+      <% @produto.errors.full_messages_for(:descricao).each do |message| %>
+        <div> <%= message %> </div>
+      <% end %>
     </div>
-
+    
     <div class="row">
       <div class="form-group col-md-3">
         <%= f.label :classificacao %><br />
@@ -80,7 +74,6 @@
           <div> <%= message %> </div>
         <% end %>
       </div>
-
     </div>  
     <br/>
     <div>

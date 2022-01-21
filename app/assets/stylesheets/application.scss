@@ -168,7 +168,6 @@ label {
 
 .form-group input,
 .form-group textarea {
-  background-color: #ffff;
   border: 1px solid black;
   border-radius: 12px
 }
@@ -187,6 +186,8 @@ form {
 
   background-color: transparent !important;
 }
+
+// Deixar video alinhado na pagina
 #background {
   position: fixed;
   top: 50%;

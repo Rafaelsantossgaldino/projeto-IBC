@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_180554) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
-    t.decimal "valor"
+    t.decimal "valor", precision: 5, scale: 2
     t.integer "categoria"
   end
 
