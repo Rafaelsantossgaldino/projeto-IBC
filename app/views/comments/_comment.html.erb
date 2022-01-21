@@ -11,10 +11,10 @@
         <%= comment.classificacao %>
       </div>
       <br/>
-      <%= link_to 'Destruir comentário', [comment.produto, comment], class: "btn btn-secondary",
-                    method: :delete,
-                    data: { confirm: "Tem Certeza?" } %>
-  
     <% end %>
+    <%= link_to 'Apagar comentário', [comment.produto, comment], class: "btn btn-secondary",
+                  method: :delete,
+                  data: { confirm: "Tem Certeza?" } %>
+
   <% end %>
 </div>

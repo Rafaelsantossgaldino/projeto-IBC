@@ -23,7 +23,7 @@ class Produto < ApplicationRecord
   
   enum categoria: { 
     'Camisetas' => 0,
-    'Saias' => 1,
+    'Saias' => 1, 
     'Vestidos' => 2,
     'Body' => 3,
     'Cropped' => 4,
