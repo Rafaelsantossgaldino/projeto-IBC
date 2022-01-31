@@ -88,6 +88,6 @@ class ProdutosController < ApplicationController
   private
 
   def produto_params
-    params.require(:produto).permit(:codigo, :nome, :classificacao, :descricao, :status, :categoria, :valor )
+    params.require(:produto).permit(:codigo, :nome, :classificacao, :descricao, :status, :categoria, :valor, :image )
   end
 end

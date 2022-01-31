@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_180554) do
+ActiveRecord::Schema.define(version: 2022_01_28_145700) do
 
   create_table "comments", force: :cascade do |t|
     t.text "commenter"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_180554) do
     t.string "status"
     t.decimal "valor", precision: 5, scale: 2
     t.integer "categoria"
+    t.string "image"
   end
 
 end

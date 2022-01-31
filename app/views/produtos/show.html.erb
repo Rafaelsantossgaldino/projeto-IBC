@@ -33,6 +33,11 @@
           <%= @produto.categoria %> 
         </div>
         <br/>
+        <div>
+          <strong>Imagem:</strong>
+          <img src= "<%= @produto.image %>" >
+        </div>
+        <br/>
         <%= render 'comments/comment', produto: @produto %>  
       </div>
       <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">

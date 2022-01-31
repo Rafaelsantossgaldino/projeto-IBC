@@ -76,6 +76,11 @@
       </div>
     </div>  
     <br/>
+    <div class="form-group col-md-12">
+      <%= f.label :image %>
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
+    <br/>
     <div>
       <%= f.submit "Criar", class: "btn btn-secondary"%>
       <%= link_to 'Back', produtos_url, class: "btn btn-secondary" %>

@@ -2,6 +2,8 @@ class Produto < ApplicationRecord
   include Visible
   has_many :comments, dependent: :destroy
 
+  mount_uploader :image, FileUploader
+
   # Validacoes
   validates :codigo, presence: true, length: { minimum: 1}
   validates :nome, presence: true, length: { minimum: 9}
