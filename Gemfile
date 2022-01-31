@@ -8,7 +8,7 @@ gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
-
+gem 'pg', '~> 1.2', '>= 1.2.3', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Ransak
@@ -61,10 +61,6 @@ end
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3', '>= 1.3.13'
-end
-
-group :production do
-  gem 'pg', '~> 1.3'
 end
 
 
