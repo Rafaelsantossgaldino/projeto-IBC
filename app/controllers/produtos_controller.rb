@@ -84,7 +84,6 @@ class ProdutosController < ApplicationController
 
   end
   
-  
   private
 
   def produto_params

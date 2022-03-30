@@ -11,6 +11,8 @@ gem 'rails', '~> 5.2.6'
 gem 'pg', '~> 1.2', '>= 1.2.3', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# sqlite3
+gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 # Ransak
 gem 'ransack'
 # Botstrap
@@ -63,6 +65,9 @@ group :development, :test do
   gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 end
 
+group :production do
+  gem 'pg', '~> 1.2', '>= 1.2.3'
+end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
