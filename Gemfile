@@ -12,7 +12,7 @@ gem 'pg', '~> 1.2', '>= 1.2.3', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # sqlite3
-gem 'sqlite3', '~> 1.3', '>= 1.3.13'
+gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 # Ransak
 gem 'ransack'
 # Botstrap
@@ -62,7 +62,7 @@ end
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.3', '>= 1.3.13'
+  gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 end
 
 group :production do
